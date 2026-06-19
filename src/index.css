@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-@layer base {
-  body {
-    @apply bg-slate-200 antialiased;
-  }
+body {
+  @apply bg-black;
+  margin: 0;
+  padding: 0;
 }
