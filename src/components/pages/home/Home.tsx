@@ -17,7 +17,7 @@ const Home = () => {
         <h2 className="text-4xl font-bold text-center mb-16">Our Specialties</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          <div className="border border-gray-800 p-6 rounded-2xl hover:border-yellow-500 transition-all duration-300 bg-gray-900/30">
+          <div className="border border-gray-800 p-6 rounded-2xl hover:border-yellow-500 hover:scale-105 transition-all duration-300 bg-gray-900/30">
             <div className="w-full h-60 bg-gray-700 rounded-lg mb-6 overflow-hidden">
                 <img src="https://dinnerthendessert.com/wp-content/uploads/2023/06/Supreme-Pizza-1-3.jpg" alt="Pizza" className="w-full h-full object-cover" />
             </div>
@@ -26,7 +26,7 @@ const Home = () => {
             <span className="text-yellow-500 font-bold text-lg">$19.00</span>
           </div>
           
-          <div className="border border-gray-800 p-6 rounded-2xl hover:border-yellow-500 transition-all duration-300 bg-gray-900/30">
+          <div className="border border-gray-800 p-6 rounded-2xl hover:border-yellow-500 hover:scale-105 transition-all duration-300 bg-gray-900/30">
             <div className="w-full h-60 bg-gray-700 rounded-lg mb-6 overflow-hidden">
                <img src="https://betterfoodguru.com/wp-content/uploads/2024/05/garden-salad-3.jpg" alt="Salad" className="w-full h-full object-cover" />
             </div>
@@ -35,7 +35,7 @@ const Home = () => {
             <span className="text-yellow-500 font-bold text-lg">$18.00</span>
           </div>
 
-          <div className="border border-gray-800 p-6 rounded-2xl hover:border-yellow-500 transition-all duration-300 bg-gray-900/30">
+          <div className="border border-gray-800 p-6 rounded-2xl hover:border-yellow-500 hover:scale-105 transition-all duration-300 bg-gray-900/30">
             <div className="w-full h-60 bg-gray-700 rounded-lg mb-6 overflow-hidden">
                <img src="https://somuchfoodblog.com/wp-content/uploads/2025/03/Truffle-Mushroom-Pasta9.jpg" alt="Pasta" className="w-full h-full object-cover" />
             </div>

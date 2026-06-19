@@ -4,6 +4,7 @@ import Home from "./components/pages/home/Home";
 import About from "./components/pages/about/About";
 import Footer from "./components/footer/Footer";
 import ScrollToTop from "./components/scrolltoTop/ScrollToTop";
+import Order from "./components/pages/order/Order";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/order" element={<Order />} />
         </Routes>
 
         <Footer />
