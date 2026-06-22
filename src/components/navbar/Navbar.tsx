@@ -20,7 +20,9 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <button className="font-bold text-white uppercase tracking-widest border border-yellow-500 px-6 py-2 rounded-full transition-all duration-300 hover:bg-yellow-300 hover:text-black">Order Now</button>
+      <Link to="/menu-selection" className="font-bold text-white uppercase tracking-widest border border-yellow-500 px-6 py-2 rounded-full transition-all duration-300 hover:bg-yellow-300 hover:text-black">
+        Order Now
+      </Link>
 
       <Link to="/order" className="relative text-white hover:text-yellow-500 transition-all ml-4">
         <FiShoppingCart size={24} />

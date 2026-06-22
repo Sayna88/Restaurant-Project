@@ -6,6 +6,8 @@ import Footer from "./components/footer/Footer";
 import ScrollToTop from "./components/scrolltoTop/ScrollToTop";
 import Order from "./components/pages/order/Order";
 import Article from "./components/pages/article/Article";
+import MenuSelection from "./components/pages/menuSelection/MenuSelection";
+import RestaurantMenu from "./components/pages/restaurantMenu/RestaurantMenu";
 
 function App() {
   return (
@@ -15,10 +17,14 @@ function App() {
         <Navbar />
 
         <Routes>
+
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/order" element={<Order />} />
           <Route path="/article/:id" element={<Article />} />
+          <Route path="/menu-selection" element={<MenuSelection />} />
+          <Route path="/order/restaurant" element={<RestaurantMenu />} />
+
         </Routes>
 
         <Footer />
