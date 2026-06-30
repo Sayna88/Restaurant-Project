@@ -39,38 +39,144 @@ const SteakIcon = () => (
   </svg>
 );
 
-interface Recipe {
+const FriedChickenIcon = () => (
+  <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-md">
+    <circle cx="50" cy="50" r="46" fill="transparent" stroke="#dee2e6" strokeWidth="2"/>
+    <circle cx="50" cy="50" r="38" fill="transparent" stroke="#e9ecef" strokeWidth="1"/>
+    {/* Bucket */}
+    <path d="M30,70 L35,40 L65,40 L70,70 Z" fill="#ffffff" stroke="#d32f2f" strokeWidth="3" strokeLinejoin="round"/>
+    <path d="M35,40 L65,40 L65,46 L35,46 Z" fill="#d32f2f" />
+    <line x1="45" y1="46" x2="43" y2="70" stroke="#d32f2f" strokeWidth="2.5"/>
+    <line x1="55" y1="46" x2="57" y2="70" stroke="#d32f2f" strokeWidth="2.5"/>
+    {/* Chicken Legs */}
+    <path d="M40,22 L37,14 L43,14 Z" fill="#f5f5f5" stroke="#9e9e9e" strokeWidth="1"/>
+    <path d="M60,22 L57,14 L63,14 Z" fill="#f5f5f5" stroke="#9e9e9e" strokeWidth="1"/>
+    <path d="M45,40 C48,25 32,25 40,40 Z" fill="#e67e22" stroke="#d35400" strokeWidth="2"/>
+    <path d="M55,40 C52,25 68,25 60,40 Z" fill="#e67e22" stroke="#d35400" strokeWidth="2"/>
+    <path d="M50,40 C50,22 40,28 50,40 Z" fill="#d35400" stroke="#c0392b" strokeWidth="1.5"/>
+  </svg>
+);
+
+const SandwichIcon = () => (
+  <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-md">
+    <circle cx="50" cy="50" r="46" fill="transparent" stroke="#dee2e6" strokeWidth="2"/>
+    <circle cx="50" cy="50" r="38" fill="transparent" stroke="#e9ecef" strokeWidth="1"/>
+    {/* Top Bread */}
+    <path d="M25,44 Q50,26 75,44 L70,50 L30,50 Z" fill="#f4a460" stroke="#cd853f" strokeWidth="2"/>
+    {/* Lettuce */}
+    <path d="M27,51 Q35,47 45,52 T65,50 T73,53 L70,55 L30,55 Z" fill="#8bc34a" />
+    {/* Tomato */}
+    <rect x="30" y="55" width="40" height="4" rx="2" fill="#e53935" />
+    {/* Cheese */}
+    <path d="M30,59 L70,59 L75,64 L65,60 L55,64 L45,60 L35,64 L25,60 Z" fill="#fbc02d" />
+    {/* Meat */}
+    <rect x="32" y="62" width="36" height="6" rx="3" fill="#795548" />
+    {/* Bottom Bread */}
+    <path d="M30,68 L70,68 Q65,76 50,76 Q35,76 30,68 Z" fill="#f4a460" stroke="#cd853f" strokeWidth="2"/>
+  </svg>
+);
+
+interface MenuItem {
   id: number;
+  categoryId: string;
   name: string;
   ingredients: string[];
   image: string;
-  mealType: string[];
+  price: number;
 }
 
+const localMenuData: MenuItem[] = [
+  {
+    id: 1,
+    categoryId: "Appetizers",
+    name: "Classic Margherita",
+    ingredients: ["Pizza dough", "Tomato sauce", "Fresh mozzarella", "Basil"],
+    price: 11.99,
+    image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&q=80&w=500"
+  },
+  {
+    id: 2,
+    categoryId: "AmericanPizza",
+    name: "Pepperoni Feast",
+    ingredients: ["Double pepperoni", "Mozzarella", "Tomato sauce", "Garlic crust"],
+    price: 14.99,
+    image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&q=80&w=500"
+  },
+  {
+    id: 3,
+    categoryId: "ItalianPizza",
+    name: "Neapolitan Authentic",
+    ingredients: ["San Marzano tomatoes", "Buffalo mozzarella", "Extra virgin olive oil"],
+    price: 16.50,
+    image: "https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?auto=format&fit=crop&q=80&w=500"
+  },
+  {
+    id: 4,
+    categoryId: "StromboliPizza",
+    name: "Meat Lovers Stromboli",
+    ingredients: ["Rolled pizza dough", "Sausage", "Bacon", "Mozzarella", "Marinara"],
+    price: 13.99,
+    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=500"
+  },
+  {
+    id: 5,
+    categoryId: "FriedChicken",
+    name: "Crispy Fried Bucket",
+    ingredients: ["8pcs Fried Chicken", "Secret Spices", "Fries", "Coleslaw"],
+    price: 19.99,
+    image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&q=80&w=500"
+  },
+  {
+    id: 6,
+    categoryId: "Burger",
+    name: "Double Cheese Burger",
+    ingredients: ["Two Beef Patties", "Cheddar", "Lettuce", "Tomato", "Special Sauce"],
+    price: 12.99,
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=500"
+  },
+  {
+    id: 7,
+    categoryId: "Sandwich",
+    name: "Club Sandwich",
+    ingredients: ["Roasted Turkey", "Bacon", "Lettuce", "Tomato", "Mayo", "Toasted Bread"],
+    price: 9.99,
+    image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&q=80&w=500"
+  },
+  {
+    id: 8,
+    categoryId: "Pasta",
+    name: "Spaghetti Carbonara",
+    ingredients: ["Spaghetti", "Pancetta", "Eggs", "Parmesan", "Black Pepper"],
+    price: 15.50,
+    image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&q=80&w=500"
+  },
+  {
+    id: 9,
+    categoryId: "Steak",
+    name: "Ribeye Steak",
+    ingredients: ["12oz Ribeye", "Garlic Herb Butter", "Mashed Potatoes", "Asparagus"],
+    price: 32.99,
+    image: "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&q=80&w=500"
+  }
+];
+
 const RestaurantMenu = () => {
-  const [items, setItems] = useState<Recipe[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [activeCategory, setActiveCategory] = useState<string>("Starters");
+  const [activeCategory, setActiveCategory] = useState<string>(""); 
+  
   const categories = [
-    { id: "Starters", name: "Starters", image: "https://cdn-icons-png.flaticon.com/512/2515/2515151.png" },
+    { id: "Appetizer", name: "Appetizer", image: "https://cdn-icons-png.flaticon.com/512/2515/2515151.png" },
     { id: "AmericanPizza", name: "American Pizza", image: "https://cdn-icons-png.flaticon.com/512/1404/1404945.png" },
     { id: "ItalianPizza", name: "Italian Pizza", image: "https://cdn-icons-png.flaticon.com/512/3595/3595458.png" },
-    { id: "FriedChicken", name: "Fried Chicken", image: "https://cdn-icons-png.flaticon.com/512/1046/1046786.png" },
+    { id: "StromboliPizza", name: "Stromboli Pizza", image: "https://cdn-icons-png.flaticon.com/512/3595/3595475.png" },
+    { id: "FriedChicken", name: "Fried Chicken", customIcon: <FriedChickenIcon /> }, // تغییر به SVG
     { id: "Burger", name: "Burger", image: "https://cdn-icons-png.flaticon.com/512/3075/3075977.png" },
-    { id: "Sandwich", name: "Sandwich", image: "https://cdn-icons-png.flaticon.com/512/3014/3014502.png" },
+    { id: "Sandwich", name: "Sandwich", customIcon: <SandwichIcon /> }, // تغییر به SVG
     { id: "Pasta", name: "Pasta", customIcon: <PastaIcon /> },
     { id: "Steak", name: "Steak", customIcon: <SteakIcon /> }
   ];
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    fetch('https://dummyjson.com/recipes?limit=30')
-      .then(res => res.json())
-      .then(data => {
-        setItems(data.recipes);
-        setLoading(false);
-      })
-      .catch(err => console.error("Error fetching data from API: ", err));
+    window.scrollTo(0,0);
   }, []);
 
   const scrollToCategory = (categoryId: string) => {
@@ -82,15 +188,11 @@ const RestaurantMenu = () => {
     }
   };
 
-  if (loading) {
-    return <div className="min-h-screen bg-black text-yellow-500 flex items-center justify-center text-2xl font-bold">Loading Menu from API...</div>;
-  }
-
   return (
     <div className="min-h-screen bg-black text-white pb-20">
       <div className="pt-24 pb-6 text-center">
         <h1 className="text-5xl font-bold text-white mb-4">Restaurant <span className="text-yellow-500">Menu</span></h1>
-        <p className="text-gray-400 text-lg">Real data fetched from API</p>
+        <p className="text-gray-400 text-lg">Premium Handcrafted Dishes</p>
       </div>
 
       <div className="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-gray-800 py-6 shadow-lg overflow-x-auto no-scrollbar">
@@ -98,7 +200,7 @@ const RestaurantMenu = () => {
           {categories.map((cat) => (
             <button key={cat.id} onClick={() => scrollToCategory(cat.id)} className="flex flex-col items-center group w-28 md:w-32 flex-shrink-0 cursor-pointer relative">
 
-              <div className={`w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center p-3 transition-transform duration-300 group-hover:-translate-y-2 
+              <div className={`w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center p-3 transition-all duration-300 group-hover:-translate-y-2 group-hover:bg-white group-hover:border-4 group-hover:border-yellow-500 group-hover:shadow-[0_0_20px_rgba(234,179,8,0.5)]
                 ${activeCategory === cat.id ? 'bg-white border-4 border-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.5)]' : 'bg-gray-200 border-2 border-transparent'}`}>
                 {cat.customIcon ? (
                   cat.customIcon
@@ -107,8 +209,8 @@ const RestaurantMenu = () => {
                 )}
               </div>
               
-              <span className={`text-sm font-extrabold whitespace-nowrap px-4 py-1.5 rounded-full -mt-5 z-10 transition-colors border-2 border-black
-                ${activeCategory === cat.id ? 'bg-yellow-500 text-black' : 'bg-gray-800 text-yellow-500 group-hover:bg-gray-700'}`}>
+              <span className={`text-sm font-extrabold whitespace-nowrap px-4 py-1.5 rounded-full -mt-5 z-10 transition-colors border-2 border-black group-hover:bg-yellow-500 group-hover:text-black
+                ${activeCategory === cat.id ? 'bg-yellow-500 text-black' : 'bg-gray-800 text-yellow-500'}`}>
                 {cat.name}
               </span>
             </button>
@@ -117,9 +219,8 @@ const RestaurantMenu = () => {
       </div>
 
       <div className="max-w-4xl mx-auto px-6 mt-16 space-y-24">
-        {categories.map((category, index) => {
-          const categoryItems = items.filter((_, i) => (i % categories.length) === index);
-          
+        {categories.map((category) => {
+          const categoryItems = localMenuData.filter(item => item.categoryId === category.id);
           if (categoryItems.length === 0) return null;
           
           return (
@@ -133,9 +234,7 @@ const RestaurantMenu = () => {
               </div>
 
               <div className="flex flex-col gap-6">
-                {categoryItems.map(item => {
-                  const fakePrice = `$${(10 + (item.id % 15))}.99`;
-                  return (
+                {categoryItems.map(item => (
                     <div key={item.id} className="flex flex-col md:flex-row bg-gray-900/40 border border-gray-800 rounded-3xl overflow-hidden hover:border-yellow-500/50 transition-colors group">
                       
                       <div className="w-full md:w-48 h-48 relative overflow-hidden flex-shrink-0">
@@ -149,7 +248,7 @@ const RestaurantMenu = () => {
                               {item.name}
                             </h3>
                             <span className="bg-yellow-500 text-black font-extrabold px-4 py-1 rounded-full text-lg shadow-[0_0_15px_rgba(234,179,8,0.4)]">
-                              {fakePrice}
+                              ${item.price}
                             </span>
                           </div>
                           <p className="text-gray-400 leading-relaxed mt-2 line-clamp-2">
@@ -162,8 +261,7 @@ const RestaurantMenu = () => {
                         </div>
                       </div>
                     </div>
-                  )
-                })}
+                ))}
               </div>
             </div>
           );
