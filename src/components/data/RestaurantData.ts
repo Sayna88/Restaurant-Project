@@ -4,10 +4,10 @@ export const restaurantMenu = [
   {
     id: 1,
     categoryId: "Appetizer",
-    name: "Classic Margherita",
+    name: "Creamy Chicken Soup",
     ingredients: ["Pizza dough", "Tomato sauce", "Fresh mozzarella cheese", "Fresh basil"],
     price: 11.99,
-    image: "/images/starters/margherita.jpg" 
+    image: "soup.png" 
   },
   {
     id: 2,

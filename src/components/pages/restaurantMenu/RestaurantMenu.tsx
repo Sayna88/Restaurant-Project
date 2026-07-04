@@ -3,71 +3,99 @@ import { restaurantMenu } from "../../data/RestaurantData";
 
 const PastaIcon = () => (
   <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-md">
-    <circle cx="50" cy="50" r="46" fill="transparent" stroke="#dee2e6" strokeWidth="2"/>
-    <circle cx="50" cy="50" r="38" fill="transparent" stroke="#e9ecef" strokeWidth="1"/>
-    <circle cx="50" cy="50" r="34" fill="none" stroke="#dee2e6" strokeWidth="1" strokeDasharray="3,3"/>
-    <path d="M32,52 Q42,32 54,48 T72,48" fill="none" stroke="#f4c430" strokeWidth="4.5" strokeLinecap="round"/>
-    <path d="M34,44 Q46,62 58,42 T68,56" fill="none" stroke="#e0a800" strokeWidth="3.5" strokeLinecap="round"/>
-    <path d="M26,46 Q48,28 64,46 T74,38" fill="none" stroke="#f4c430" strokeWidth="4" strokeLinecap="round"/>
-    <path d="M30,58 Q52,68 66,50 T70,42" fill="none" stroke="#e0a800" strokeWidth="3.5" strokeLinecap="round"/>
-    <path d="M38,36 Q50,58 62,34" fill="none" stroke="#f4c430" strokeWidth="4" strokeLinecap="round"/>
-    <path d="M42,64 Q54,34 64,58" fill="none" stroke="#e0a800" strokeWidth="3" strokeLinecap="round"/>
-    <path d="M44,46 C40,42 48,34 56,38 C62,40 64,48 58,54 C52,58 46,54 44,46 Z" fill="#d32f2f"/>
-    <path d="M48,48 C46,44 50,38 54,40 C58,42 57,48 52,50 Z" fill="#b71c1c"/>
-    <path d="M46,38 C42,34 48,30 50,34 C52,38 48,40 46,38 Z" fill="#388e3c"/>
-    <path d="M55,44 C59,41 62,46 58,49 C55,51 52,47 55,44 Z" fill="#2e7d32"/>
-    <path d="M42,48 C39,49 38,44 41,42 C44,40 45,45 42,48 Z" fill="#4caf50"/>
+    <circle cx="50" cy="50" r="42" fill="#ffffff" stroke="#cccccc" strokeWidth="2"/>
+    <circle cx="50" cy="50" r="32" fill="#f8f9fa" />
+    <path d="M25,50 Q35,20 50,45 T75,50" fill="none" stroke="#f4c430" strokeWidth="4.5" strokeLinecap="round"/>
+    <path d="M28,40 Q40,65 55,35 T72,55" fill="none" stroke="#e0a800" strokeWidth="4" strokeLinecap="round"/>
+    <path d="M22,55 Q45,30 60,55 T78,45" fill="none" stroke="#f4c430" strokeWidth="4.5" strokeLinecap="round"/>
+    <path d="M30,35 Q45,60 65,35" fill="none" stroke="#e0a800" strokeWidth="3.5" strokeLinecap="round"/>
+    <path d="M40,50 Q50,38 60,50 Q66,62 50,65 Q34,62 40,50 Z" fill="#d32f2f" />
+    <circle cx="45" cy="55" r="4" fill="#b71c1c" />
+    <circle cx="56" cy="52" r="4.5" fill="#b71c1c" />
+    <path d="M48,45 Q44,40 50,37 Q56,41 48,45 Z" fill="#2e7d32" />
+    <path d="M52,48 Q59,44 56,39 Q49,44 52,48 Z" fill="#4caf50" />
   </svg>
 );
 
 const SteakIcon = () => (
   <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-md">
-    <circle cx="50" cy="50" r="46" fill="transparent" stroke="#dee2e6" strokeWidth="2"/>
-    <circle cx="50" cy="50" r="38" fill="transparent" stroke="#e9ecef" strokeWidth="1"/>
+    <circle cx="50" cy="50" r="42" fill="#ffffff" stroke="#cccccc" strokeWidth="2"/>
+    <circle cx="50" cy="50" r="32" fill="#f8f9fa" />
     <path d="M34,46 C30,34 46,24 64,30 C76,34 78,52 70,66 C62,76 42,74 36,64 C32,58 36,52 34,46 Z" fill="#5d4037"/>
     <path d="M36,46 C33,36 46,27 61,32 C71,35 73,50 67,61 C60,70 43,69 38,60 C35,55 38,50 36,46 Z" fill="#4e342e"/>
     <line x1="44" y1="34" x2="56" y2="48" stroke="#271714" strokeWidth="3" strokeLinecap="round"/>
     <line x1="52" y1="34" x2="64" y2="48" stroke="#271714" strokeWidth="3" strokeLinecap="round"/>
     <line x1="60" y1="37" x2="70" y2="49" stroke="#271714" strokeWidth="3" strokeLinecap="round"/>
     <line x1="38" y1="42" x2="48" y2="54" stroke="#271714" strokeWidth="3" strokeLinecap="round"/>
-    <circle cx="28" cy="34" r="3" fill="#4caf50"/>
-    <circle cx="24" cy="40" r="3" fill="#388e3c"/>
-    <circle cx="26" cy="46" r="2.5" fill="#4caf50"/>
-    <circle cx="21" cy="45" r="3" fill="#2e7d32"/>
-    <path d="M62,66 Q70,72 60,78 Z" fill="#ffb74d" stroke="#f57c00" strokeWidth="0.5"/>
-    <path d="M50,70 Q58,78 48,82 Z" fill="#ffa726" stroke="#e65100" strokeWidth="0.5"/>
-    <path d="M68,56 Q76,62 70,70 Z" fill="#ffcc80" stroke="#f57c00" strokeWidth="0.5"/>
+    <circle cx="28" cy="32" r="4" fill="#4caf50"/>
+    <circle cx="24" cy="40" r="4.5" fill="#388e3c"/>
+    <circle cx="27" cy="48" r="4" fill="#4caf50"/>
+    <circle cx="21" cy="46" r="3.5" fill="#2e7d32"/>
+    <path d="M62,66 Q70,72 60,78 Z" fill="#ffb74d" stroke="#f57c00" strokeWidth="1"/>
+    <path d="M50,70 Q58,78 48,82 Z" fill="#ffa726" stroke="#e65100" strokeWidth="1"/>
+    <path d="M68,56 Q76,62 70,70 Z" fill="#ffcc80" stroke="#f57c00" strokeWidth="1"/>
   </svg>
 );
 
 const FriedChickenIcon = () => (
   <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-md">
-    <circle cx="50" cy="50" r="46" fill="transparent" stroke="#dee2e6" strokeWidth="2"/>
-    <circle cx="50" cy="50" r="38" fill="transparent" stroke="#e9ecef" strokeWidth="1"/>
-    <path d="M30,70 L35,40 L65,40 L70,70 Z" fill="#ffffff" stroke="#d32f2f" strokeWidth="3" strokeLinejoin="round"/>
-    <path d="M35,40 L65,40 L65,46 L35,46 Z" fill="#d32f2f" />
-    <line x1="45" y1="46" x2="43" y2="70" stroke="#d32f2f" strokeWidth="2.5"/>
-    <line x1="55" y1="46" x2="57" y2="70" stroke="#d32f2f" strokeWidth="2.5"/>
-    <path d="M40,22 L37,14 L43,14 Z" fill="#f5f5f5" stroke="#9e9e9e" strokeWidth="1"/>
-    <path d="M60,22 L57,14 L63,14 Z" fill="#f5f5f5" stroke="#9e9e9e" strokeWidth="1"/>
-    <path d="M45,40 C48,25 32,25 40,40 Z" fill="#e67e22" stroke="#d35400" strokeWidth="2"/>
-    <path d="M55,40 C52,25 68,25 60,40 Z" fill="#e67e22" stroke="#d35400" strokeWidth="2"/>
-    <path d="M50,40 C50,22 40,28 50,40 Z" fill="#d35400" stroke="#c0392b" strokeWidth="1.5"/>
+    <g transform="translate(0, 5)">
+      <path d="M42,45 L32,18" stroke="#d68a38" strokeWidth="5" strokeLinecap="round"/>
+      <circle cx="28" cy="16" r="4.5" fill="#e6dbcd" />
+      <circle cx="36" cy="15" r="4.5" fill="#e6dbcd" />
+      <ellipse cx="40" cy="38" rx="12" ry="18" fill="#b06d26" transform="rotate(-25 40 38)"/>
+      <path d="M58,45 L68,18" stroke="#d68a38" strokeWidth="5" strokeLinecap="round"/>
+      <circle cx="64" cy="15" r="4.5" fill="#e6dbcd" />
+      <circle cx="72" cy="16" r="4.5" fill="#e6dbcd" />
+      <ellipse cx="60" cy="38" rx="12" ry="18" fill="#b06d26" transform="rotate(25 60 38)"/>
+      <path d="M50,45 L50,12" stroke="#d68a38" strokeWidth="5" strokeLinecap="round"/>
+      <circle cx="45" cy="10" r="4.5" fill="#e6dbcd" />
+      <circle cx="55" cy="10" r="4.5" fill="#e6dbcd" />
+      <ellipse cx="50" cy="35" rx="14" ry="20" fill="#c47b2b" />
+      <path d="M25,45 L75,45 L65,85 L35,85 Z" fill="#e0e0e0" />
+      <path d="M15,40 L85,40 L65,85 L35,85 Z" fill="#ffffff" stroke="#cccccc" strokeWidth="2" strokeLinejoin="round"/>
+      <path d="M15,40 L5,20 L35,40 Z" fill="#f5f5f5" stroke="#cccccc" strokeWidth="1"/>
+      <path d="M85,40 L95,20 L65,40 Z" fill="#f5f5f5" stroke="#cccccc" strokeWidth="1"/>
+    </g>
   </svg>
 );
 
 const SandwichIcon = () => (
   <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-md">
-    <circle cx="50" cy="50" r="46" fill="transparent" stroke="#dee2e6" strokeWidth="2"/>
-    <circle cx="50" cy="50" r="38" fill="transparent" stroke="#e9ecef" strokeWidth="1"/>
-    <path d="M25,44 Q50,26 75,44 L70,50 L30,50 Z" fill="#f4a460" stroke="#cd853f" strokeWidth="2"/>
-    <path d="M27,51 Q35,47 45,52 T65,50 T73,53 L70,55 L30,55 Z" fill="#8bc34a" />
-    <rect x="30" y="55" width="40" height="4" rx="2" fill="#e53935" />
-    <path d="M30,59 L70,59 L75,64 L65,60 L55,64 L45,60 L35,64 L25,60 Z" fill="#fbc02d" />
-    <rect x="32" y="62" width="36" height="6" rx="3" fill="#795548" />
-    <path d="M30,68 L70,68 Q65,76 50,76 Q35,76 30,68 Z" fill="#f4a460" stroke="#cd853f" strokeWidth="2"/>
+    <g transform="translate(0, 10)">
+      <path d="M15,65 L85,65 L75,78 L25,78 Z" fill="#de9852" stroke="#bd7a33" strokeWidth="2"/>
+      <path d="M18,58 L82,58 L78,65 L22,65 Z" fill="#6d4c41" />
+      <path d="M15,52 L85,52 L80,58 L20,58 Z" fill="#ffca28" />
+      <polygon points="35,58 40,70 45,58" fill="#ffca28" />
+      <polygon points="60,58 65,68 70,58" fill="#ffca28" />
+      <path d="M16,46 L84,46 L82,52 L18,52 Z" fill="#e53935" />
+      <path d="M10,40 Q30,52 50,40 T80,42 T90,40 L85,46 L15,46 Z" fill="#4caf50" />
+      <path d="M12,40 Q25,32 40,42 T60,35 T88,40" fill="none" stroke="#4caf50" strokeWidth="4" strokeLinecap="round"/>
+      <path d="M25,20 L75,20 L88,40 L12,40 Z" fill="#f4a460" stroke="#cd853f" strokeWidth="2"/>
+      <path d="M25,20 L75,20 L70,15 L30,15 Z" fill="#e6baa3" />
+    </g>
   </svg>
 );
+
+const StromboliPizzaIcon = () => (
+  <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-md">
+    <path d="M50,55 L88,40 A40,40 0 1,1 50,15 Z" fill="#f4c430" stroke="#bd6824" strokeWidth="2"/>
+    <path d="M88,40 A40,40 0 1,1 50,15" fill="none" stroke="#de7e33" strokeWidth="6" strokeLinecap="round"/>
+    <circle cx="35" cy="45" r="4.5" fill="#d32f2f" />
+    <circle cx="45" cy="75" r="5" fill="#d32f2f" />
+    <circle cx="65" cy="70" r="4.5" fill="#d32f2f" />
+    <circle cx="30" cy="60" r="4" fill="#d32f2f" />
+    <circle cx="70" cy="50" r="4.5" fill="#d32f2f" />
+    <circle cx="50" cy="35" r="4" fill="#d32f2f" />
+    <g transform="translate(10, -10)">
+      <path d="M50,55 L50,15 A40,40 0 0,1 88,40 Z" fill="#f4c430" stroke="#bd6824" strokeWidth="2"/>
+      <path d="M50,15 A40,40 0 0,1 88,40" fill="none" stroke="#de7e33" strokeWidth="5" strokeLinecap="round"/>
+      <circle cx="65" cy="30" r="4" fill="#d32f2f" />
+      <circle cx="75" cy="38" r="4" fill="#d32f2f" />
+    </g>
+  </svg>
+);
+
 
 const RestaurantMenu = () => {
   const [activeCategory, setActiveCategory] = useState<string>(""); 
@@ -76,8 +104,8 @@ const RestaurantMenu = () => {
     { id: "Appetizer", name: "Appetizer", image: "https://cdn-icons-png.flaticon.com/512/2515/2515151.png" },
     { id: "AmericanPizza", name: "American Pizza", image: "https://cdn-icons-png.flaticon.com/512/1404/1404945.png" },
     { id: "ItalianPizza", name: "Italian Pizza", image: "https://cdn-icons-png.flaticon.com/512/3595/3595458.png" },
-    { id: "StromboliPizza", name: "Stromboli Pizza", image: "https://cdn-icons-png.flaticon.com/512/3595/3595475.png" },
-    { id: "FriedChicken", name: "Fried Chicken", customIcon: <FriedChickenIcon /> },
+    { id: "StromboliPizza", name: "Stromboli Pizza", customIcon: <StromboliPizzaIcon /> },
+    { id: "FriedChicken", name: "Fried", customIcon: <FriedChickenIcon /> }, // نام به Fried تغییر کرد
     { id: "Burger", name: "Burger", image: "https://cdn-icons-png.flaticon.com/512/3075/3075977.png" },
     { id: "Sandwich", name: "Sandwich", customIcon: <SandwichIcon /> },
     { id: "Pasta", name: "Pasta", customIcon: <PastaIcon /> },
