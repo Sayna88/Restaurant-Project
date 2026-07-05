@@ -1,32 +1,128 @@
 export const restaurantMenu = [
-
   // --- Appetizer ---
+
   {
     id: 1,
     categoryId: "Appetizer",
-    name: "Creamy Chicken Soup",
-    ingredients: ["Pizza dough", "Tomato sauce", "Fresh mozzarella cheese", "Fresh basil"],
-    price: 11.99,
-    image: "soup.png" 
+    name: "Garlic Bread",
+    ingredients: ["Pizza dough", "Garlic sauce", "Chopped parsley", "Sunflower seeds"],
+    price: 360000,
+    image: "/bread.webp"
   },
   {
     id: 2,
     categoryId: "Appetizer",
-    name: "Tomato Basil Bruschetta",
-    ingredients: ["Baguette", "Tomatoes", "Fresh basil", "Olive oil"],
-    price: 17.99,
-    image: "/images/starters/bruschetta.jpg"
+    name: "Vegetable Plate",
+    ingredients: ["Zucchini", "Eggplant", "Corn", "Broccoli", "Cauliflower", "Carrots", "Mushrooms", "Cherry tomatoes", "Vegetable dressing", "Sunflower seeds", "Grain sprouts"],
+    price: 390000,
+    image: "/veg.webp"
+  },
+  {
+    id: 3,
+    categoryId: "Appetizer",
+    name: "Caesar Salad Two Rolls (Grilled and Fried)",
+    ingredients: ["Fried or grilled chicken roll", "Lettuce", "Special Caesar dressing", "Cherry tomatoes", "Olives", "Croutons", "Parmesan cheese powder"],
+    price: 680000,
+    image: "/caesar2.webp"
+  },
+  {
+    id: 4,
+    categoryId: "Appetizer",
+    name: "Caesar Salad Four Rolls (Grilled and Fried)",
+    ingredients: ["Two fried or grilled chicken rolls", "Lettuce", "Special Caesar dressing", "Cherry tomatoes", "Olives", "Croutons", "Parmesan cheese powder"],
+    price: 1300000,
+    image: "/caesar4.webp"
+  },
+  {
+    id: 5,
+    categoryId: "Appetizer",
+    name: "Entrecote Salad for Two",
+    ingredients: ["Marinated grilled chicken", "Lettuce", "Special Entrecote dressing", "Walnut powder", "Chopped parsley", "Cherry tomatoes", "Grain sprouts"],
+    price: 620000,
+    image: "/entrecote2.webp"
+  },
+  {
+    id: 6,
+    categoryId: "Appetizer",
+    name: "Entrecote Salad for Four",
+    ingredients: ["Marinated grilled chicken", "Lettuce", "Special Entrecote dressing", "Walnut powder", "Chopped parsley", "Cherry tomatoes", "Grain sprouts"],
+    price: 990000,
+    image: "/entrecote4.webp"
+  },
+  {
+    id: 7,
+    categoryId: "Appetizer",
+    name: "French Fries",
+    ingredients: ["Flavored potatoes", "Special sauce"],
+    price: 230000,
+    image: "/f-frise.webp" 
+  },
+  {
+    id: 8,
+    categoryId: "Appetizer",
+    name: "White Fries",
+    ingredients: ["Flavored potatoes", "Mushroom sauce", "Dip sauce", "Parmesan powder"],
+    price: 390000,
+    image: "/w-fries.webp"
+  },
+  {
+    id: 9,
+    categoryId: "Appetizer",
+    name: "Special Fries",
+    ingredients: ["Baked potatoes", "Special sauce", "Chopped parsley"],
+    price: 280000,
+    image: "/v-fries.webp"
+  },
+  {
+    id: 10,
+    categoryId: "Appetizer",
+    name: "Potato Farm",
+    ingredients: ["Fried potatoes", "Meat and chicken ham", "Mozzarella cheese", "Mushroom sauce", "Bell pepper"],
+    price: 450000,
+    image: "/m-fries.webp"
   },
 
   // --- American Pizza ---
 
   {
-    id: 3,
+    id: 11,
     categoryId: "AmericanPizza",
-    name: "Pepperoni Feast",
-    ingredients: ["Double pepperoni", "Mozzarella", "Tomato sauce"],
-    price: 14.99,
-    image: "/images/pizza/pepperoni.jpg"
+    name: "Roast Beef Pizza",
+    ingredients: ["Roasted beef slices", "Mushrooms", "Bell peppers", "Mozzarella cheese"],
+    price: 490000,
+    image: "/pizza1.webp"
+  },
+  {
+    id: 12,
+    categoryId: "AmericanPizza",
+    name: "Mixed Pizza",
+    ingredients: ["Beef and chicken ham", "Cocktail sausage", "Mushrooms", "Mozzarella cheese", "Bell pepper", "Caramel sauce"],
+    price: 790000,
+    image: "/pizza2.webp"
+  },
+  {
+    id: 13,
+    categoryId: "AmericanPizza",
+    name: "BBQ Chicken Pizza",
+    ingredients: ["Smoked seasoned chicken", "BBQ sauce", "Bell pepper", "Mozzarella cheese", "Mushrooms", "Caramel sauce"],
+    price: 740000,
+    image: "/pizza3.webp"
+  },
+  {
+    id: 14,
+    categoryId: "AmericanPizza",
+    name: "Meat and Mushroom Pizza",
+    ingredients: ["Minced meat", "Mushrooms", "Bell peppers", "Mozzarella cheese"],
+    price: 440000,
+    image: "/pizza4.webp"
+  },
+  {
+    id: 15,
+    categoryId: "AmericanPizza",
+    name: "Chicken Alfredo Pizza",
+    ingredients: ["Seasoned chicken", "Mozzarella cheese", "Julienne fries", "Mushrooms", "Bell pepper", "Caramel sauce"],
+    price: 740000,
+    image: "/pizza5.webp"
   },
 
   // --- Italian Pizza ---

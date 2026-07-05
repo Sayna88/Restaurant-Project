@@ -100,12 +100,16 @@ const StromboliPizzaIcon = () => (
 const RestaurantMenu = () => {
   const [activeCategory, setActiveCategory] = useState<string>(""); 
   
+  // استیت‌های مربوط به کنترل اسکرول
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  
   const categories = [
     { id: "Appetizer", name: "Appetizer", image: "https://cdn-icons-png.flaticon.com/512/2515/2515151.png" },
     { id: "AmericanPizza", name: "American Pizza", image: "https://cdn-icons-png.flaticon.com/512/1404/1404945.png" },
     { id: "ItalianPizza", name: "Italian Pizza", image: "https://cdn-icons-png.flaticon.com/512/3595/3595458.png" },
     { id: "StromboliPizza", name: "Stromboli Pizza", customIcon: <StromboliPizzaIcon /> },
-    { id: "FriedChicken", name: "Fried", customIcon: <FriedChickenIcon /> }, // نام به Fried تغییر کرد
+    { id: "FriedChicken", name: "Fried", customIcon: <FriedChickenIcon /> },
     { id: "Burger", name: "Burger", image: "https://cdn-icons-png.flaticon.com/512/3075/3075977.png" },
     { id: "Sandwich", name: "Sandwich", customIcon: <SandwichIcon /> },
     { id: "Pasta", name: "Pasta", customIcon: <PastaIcon /> },
@@ -115,6 +119,20 @@ const RestaurantMenu = () => {
   useEffect(() => {
     window.scrollTo(0,0);
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const scrollToCategory = (categoryId: string) => {
     setActiveCategory(categoryId);
@@ -132,7 +150,7 @@ const RestaurantMenu = () => {
         <p className="text-gray-400 text-lg">Premium Handcrafted Dishes</p>
       </div>
 
-      <div className="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-gray-800 py-6 shadow-lg overflow-x-auto no-scrollbar">
+      <div className={`sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-gray-800 py-6 shadow-lg overflow-x-auto no-scrollbar transition-transform duration-500 ease-in-out ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="flex justify-start md:justify-center gap-4 px-6 min-w-max mx-auto">
           {categories.map((cat) => (
             <button key={cat.id} onClick={() => scrollToCategory(cat.id)} className="flex flex-col items-center group w-28 md:w-32 flex-shrink-0 cursor-pointer relative">
