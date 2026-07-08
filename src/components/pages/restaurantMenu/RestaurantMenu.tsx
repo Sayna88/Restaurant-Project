@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom"; // این هوک اضافه شد
 import { restaurantMenu } from "../../data/RestaurantData";
 
 const PastaIcon = () => (
@@ -125,6 +126,7 @@ const DrinksIcon = () => (
 );
 
 const RestaurantMenu = () => {
+  const location = useLocation();
   const [activeCategory, setActiveCategory] = useState<string>(""); 
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -142,9 +144,24 @@ const RestaurantMenu = () => {
     { id: "Drinks", name: "Drinks", customIcon: <DrinksIcon /> }
   ];
 
+  const scrollToCategory = (categoryId: string) => {
+    setActiveCategory(categoryId);
+    const element = document.getElementById(categoryId);
+    if (element) {
+      const y = element.getBoundingClientRect().top + window.scrollY - 180;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
-    window.scrollTo(0,0);
-  }, []);
+    if (location.state && location.state.scrollTo) {
+      setTimeout(() => {
+        scrollToCategory(location.state.scrollTo);
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location.state]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -159,15 +176,6 @@ const RestaurantMenu = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
-
-  const scrollToCategory = (categoryId: string) => {
-    setActiveCategory(categoryId);
-    const element = document.getElementById(categoryId);
-    if (element) {
-      const y = element.getBoundingClientRect().top + window.scrollY - 180;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="min-h-screen bg-black text-white pb-20">

@@ -1,13 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   const categories = [
-    { name: 'Pizza', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&auto=format&fit=crop&q=60' },
-    { name: 'Burgers', img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&auto=format&fit=crop&q=60' },
-    { name: 'Pasta', img: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=500&auto=format&fit=crop&q=60' },
-    { name: 'Steak', img: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500&auto=format&fit=crop&q=60' },
-    { name: 'Drinks', img: 'https://images.unsplash.com/photo-1536935338788-846bb9981813?w=500&auto=format&fit=crop&q=60' },
+    { name: 'Pizza', targetId: 'AmericanPizza', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&auto=format&fit=crop&q=60' },
+    { name: 'Burgers', targetId: 'Burger', img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&auto=format&fit=crop&q=60' },
+    { name: 'Pasta', targetId: 'Pasta', img: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=500&auto=format&fit=crop&q=60' },
+    { name: 'Steak', targetId: 'Steak', img: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500&auto=format&fit=crop&q=60' },
+    { name: 'Drinks', targetId: 'Drinks', img: 'https://images.unsplash.com/photo-1536935338788-846bb9981813?w=500&auto=format&fit=crop&q=60' },
   ];
+
+  const handleCategoryClick = (targetId: string) => {
+    navigate("/order/restaurant", { state: { scrollTo: targetId } });
+  };
 
   return (
     <div className="bg-black min-h-screen text-white">
@@ -21,7 +26,7 @@ const Home = () => {
         
         <div className="flex flex-wrap justify-center gap-8 md:gap-12 w-full max-w-4xl">
           {categories.map((cat, index) => (
-            <div key={index} className="flex flex-col items-center gap-4 cursor-pointer group">
+            <div key={index} onClick={() => handleCategoryClick(cat.targetId)} className="flex flex-col items-center gap-4 cursor-pointer group">
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-gray-800 group-hover:border-yellow-500 transition-all duration-300 shadow-lg group-hover:shadow-[0_0_15px_rgba(234,179,8,0.4)]">
                 <img src={cat.img} alt={cat.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               </div>
@@ -40,7 +45,7 @@ const Home = () => {
         </div>
         <div className="md:w-1/2 flex justify-center">
           <style>{`
-            @keyframes morph {
+            @Flash-Lite @keyframes morph {
               0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
               50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
               100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
