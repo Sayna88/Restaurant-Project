@@ -96,24 +96,50 @@ const StromboliPizzaIcon = () => (
   </svg>
 );
 
+const DrinksIcon = () => (
+  <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-md">
+    <circle cx="50" cy="50" r="42" fill="#ffffff" stroke="#cccccc" strokeWidth="2"/>
+    <circle cx="50" cy="50" r="32" fill="#f8f9fa" />
+    <path d="M45,75 L55,20 L70,12" fill="none" stroke="#e53935" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M45,75 L55,20 L70,12" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeDasharray="5 5" strokeLinecap="round"/>
+    <path d="M36.5,45 L40,75 C40,79 60,79 60,75 L63.5,45 Z" fill="#ffb74d" />
+    <ellipse cx="50" cy="45" rx="13.5" ry="3" fill="#ffa726" />
+    <rect x="42" y="55" width="7" height="7" fill="#ffffff" opacity="0.6" rx="1" transform="rotate(15 45 58)"/>
+    <rect x="52" y="62" width="6" height="6" fill="#ffffff" opacity="0.6" rx="1" transform="rotate(-20 55 65)"/>
+    <rect x="48" y="48" width="8" height="8" fill="#ffffff" opacity="0.6" rx="1" transform="rotate(45 52 52)"/>
+    <circle cx="43" cy="52" r="1.2" fill="#ffffff" opacity="0.8"/>
+    <circle cx="56" cy="58" r="1.5" fill="#ffffff" opacity="0.8"/>
+    <circle cx="46" cy="68" r="1" fill="#ffffff" opacity="0.8"/>
+    <circle cx="54" cy="50" r="1.2" fill="#ffffff" opacity="0.8"/>
+    <path d="M34,30 L40,75 C40,80 60,80 60,75 L66,30" fill="none" stroke="#4fc3f7" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
+    <ellipse cx="50" cy="30" rx="16" ry="4" fill="none" stroke="#4fc3f7" strokeWidth="2" opacity="0.5"/>
+    <g transform="translate(34, 30) rotate(-15)">
+      <circle cx="0" cy="0" r="10" fill="#fff59d" stroke="#fbc02d" strokeWidth="1.5"/>
+      <line x1="-8" y1="0" x2="8" y2="0" stroke="#fbc02d" strokeWidth="1"/>
+      <line x1="0" y1="-8" x2="0" y2="8" stroke="#fbc02d" strokeWidth="1"/>
+      <line x1="-5.6" y1="-5.6" x2="5.6" y2="5.6" stroke="#fbc02d" strokeWidth="1"/>
+      <line x1="-5.6" y1="5.6" x2="5.6" y2="-5.6" stroke="#fbc02d" strokeWidth="1"/>
+      <circle cx="0" cy="0" r="7" fill="none" stroke="#fbc02d" strokeWidth="0.5"/>
+    </g>
+  </svg>
+);
 
 const RestaurantMenu = () => {
   const [activeCategory, setActiveCategory] = useState<string>(""); 
-  
-  // استیت‌های مربوط به کنترل اسکرول
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  
+
   const categories = [
     { id: "Appetizer", name: "Appetizer", image: "https://cdn-icons-png.flaticon.com/512/2515/2515151.png" },
     { id: "AmericanPizza", name: "American Pizza", image: "https://cdn-icons-png.flaticon.com/512/1404/1404945.png" },
     { id: "ItalianPizza", name: "Italian Pizza", image: "https://cdn-icons-png.flaticon.com/512/3595/3595458.png" },
     { id: "StromboliPizza", name: "Stromboli Pizza", customIcon: <StromboliPizzaIcon /> },
-    { id: "FriedChicken", name: "Fried", customIcon: <FriedChickenIcon /> },
+    { id: "FriedFood", name: "Fried", customIcon: <FriedChickenIcon /> },
     { id: "Burger", name: "Burger", image: "https://cdn-icons-png.flaticon.com/512/3075/3075977.png" },
     { id: "Sandwich", name: "Sandwich", customIcon: <SandwichIcon /> },
     { id: "Pasta", name: "Pasta", customIcon: <PastaIcon /> },
-    { id: "Steak", name: "Steak", customIcon: <SteakIcon /> }
+    { id: "Steak", name: "Steak", customIcon: <SteakIcon /> },
+    { id: "Drinks", name: "Drinks", customIcon: <DrinksIcon /> }
   ];
 
   useEffect(() => {
