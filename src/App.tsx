@@ -8,6 +8,7 @@ import Order from "./components/pages/order/Order";
 import Article from "./components/pages/article/Article";
 import MenuSelection from "./components/pages/menuSelection/MenuSelection";
 import RestaurantMenu from "./components/pages/restaurantMenu/RestaurantMenu";
+import CafeMenu from "./components/pages/cafeMenu/CafeMenu";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/article/:id" element={<Article />} />
           <Route path="/menu-selection" element={<MenuSelection />} />
           <Route path="/order/restaurant" element={<RestaurantMenu />} />
+          <Route path="/order/cafe" element={<CafeMenu />} />
 
         </Routes>
 
