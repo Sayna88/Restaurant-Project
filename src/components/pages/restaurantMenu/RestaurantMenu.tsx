@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom"; // این هوک اضافه شد
+import { useLocation } from "react-router-dom";
 import { restaurantMenu } from "../../data/RestaurantData";
 
 const PastaIcon = () => (

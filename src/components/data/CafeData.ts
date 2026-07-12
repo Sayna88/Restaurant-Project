@@ -1,90 +1,185 @@
-export interface CafeItem {
-  id: string;
-  name: string;
-  price: number;
-  ingredients: string[];
-  image: string;
-  categoryId: string;
-}
+export const cafeMenu = [
 
-export const cafeMenu: CafeItem[] = [
-  // Hot Drinks
-  { 
-    id: "h1", 
-    name: "Espresso", 
-    price: 3.5, 
-    ingredients: ["Double shot of premium Arabica beans", "Rich crema"], 
-    image: "https://images.unsplash.com/photo-1510707577719-fa7c14a5d301?w=500&auto=format&fit=crop&q=60", 
-    categoryId: "HotDrinks" 
+  // --- Hot Drinks ---
+
+  {
+    id: 1,
+    categoryId: "HotDrinks",
+    name: "Esperso",
+    ingredients: [],
+    price: 135000,
+    image: "/h1.webp"
   },
-  { 
-    id: "h2", 
-    name: "Cappuccino", 
-    price: 4.5, 
-    ingredients: ["Espresso shot", "Steamed milk", "Thick layer of velvet foam"], 
-    image: "https://images.unsplash.com/photo-1534778101976-62847782c213?w=500&auto=format&fit=crop&q=60", 
-    categoryId: "HotDrinks" 
+  {
+    id: 2,
+    categoryId: "HotDrinks",
+    name: "Cappuccino",
+    ingredients: ["Milk volume" , "coffee"],
+    price: 195000,
+    image: "/h2.webp"
   },
-  { 
-    id: "h3", 
-    name: "Café Latte", 
-    price: 4.8, 
-    ingredients: ["Espresso", "Abundant steamed milk", "Light layer of foam"], 
-    image: "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=60", 
-    categoryId: "HotDrinks" 
+  {
+    id: 3,
+    categoryId: "HotDrinks",
+    name: "Americano",
+    ingredients: [],
+    price: 135000,
+    image: "/h3.webp"
+  },
+  {
+    id: 4,
+    categoryId: "HotDrinks",
+    name: "Mocha",
+    ingredients: [],
+    price: 245000,
+    image: "/h4.webp"
+  },
+  {
+    id: 5,
+    categoryId: "HotDrinks",
+    name: "Flate White",
+    ingredients: ["Balanced milk", "Light coffee"],
+    price: 200000,
+    image: "/h5.webp"
+  },
+  {
+    id: 6,
+    categoryId: "HotDrinks",
+    name: "Milk cafe",
+    ingredients: [],
+    price: 210000,
+    image: "/h6.webp"
+  },
+  {
+    id: 7,
+    categoryId: "HotDrinks",
+    name: "Latte",
+    ingredients: ["Extra milk", "Coffee"],
+    price: 210000,
+    image: "/h7.webp"
+  },
+  {
+    id: 8,
+    categoryId: "HotDrinks",
+    name: "Caramel Macchiato",
+    ingredients: ["Less milk", "Coffee", "Caramel syrup"],
+    price: 245000,
+    image: "/h8.jpg"
+  },
+  {
+    id: 9,
+    categoryId: "HotDrinks",
+    name: "Cocolatte",
+    ingredients: ["Coconut milk", "Coffee"],
+    price: 245000,
+    image: "/h7.webp"
+  },
+  {
+    id: 10,
+    categoryId: "HotDrinks",
+    name: "Peanut Butter Latte",
+    ingredients: ["Milk", "Coffee", "Caramel syrup", "Peanut butter"],
+    price: 300000,
+    image: "/h7.webp"
+  },
+  {
+    id: 11,
+    categoryId: "HotDrinks",
+    name: "Coconut Mocha",
+    ingredients: ["Coconut milk", "Coffee", "Coconut syrup", "Chocolate sauce"],
+    price: 295000,
+    image: "/h4.webp"
+  },
+  {
+    id: 12,
+    categoryId: "HotDrinks",
+    name: "Hazelnut Mocha",
+    ingredients: ["Milk", "Coffee", "Hazelnut syrup", "Chocolate sauce"],
+    price: 285000,
+    image: "/h4.webp"
+  },
+  {
+    id: 13,
+    categoryId: "HotDrinks",
+    name: "Chocolate Milk",
+    ingredients: [],
+    price: 200000,
+    image: "/h9.webp"
+  },
+  {
+    id: 14,
+    categoryId: "HotDrinks",
+    name: "Hot Chocolate",
+    ingredients: ["White", "Pink", "Dark"],
+    price: 205000,
+    image: "/h10.webp"
+  },
+  {
+    id: 15,
+    categoryId: "HotDrinks",
+    name: "Masala",
+    ingredients: [],
+    price: 200000,
+    image: "/h11.webp"
+  },
+  {
+    id: 16,
+    categoryId: "HotDrinks",
+    name: "Nutella Cinnamon",
+    ingredients: [],
+    price: 265000,
+    image: "/h12.jpg"
   },
 
-  // Cold Drinks
-  { 
-    id: "c1", 
-    name: "Iced Americano", 
-    price: 4.0, 
-    ingredients: ["Espresso shots poured over ice", "Chilled water"], 
-    image: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=500&auto=format&fit=crop&q=60", 
-    categoryId: "ColdDrinks" 
+  // --- Teas and Herbal ---
+
+  {
+    id: 17,
+    categoryId: "Teas",
+    name: "Baharnarenj Tea",
+    ingredients: ["Baharnarenj", "Cinnamon stick", "Saffron"],
+    price: 220000,
+    image: "/t1.webp"
   },
-  { 
-    id: "c2", 
-    name: "Caramel Frappé", 
-    price: 5.5, 
-    ingredients: ["Blended espresso", "Milk", "Ice", "Homemade caramel syrup", "Whipped cream"], 
-    image: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&auto=format&fit=crop&q=60", 
-    categoryId: "ColdDrinks" 
+  {
+    id: 18,
+    categoryId: "Teas",
+    name: "Tea and Saffron",
+    ingredients: [],
+    price: 220000,
+    image: "/t2.webp"
+  },
+  {
+    id: 19,
+    categoryId: "Teas",
+    name: "Hibiscus tea",
+    ingredients: ["Hibiscus tea", "Coriander seeds", "Valerian"],
+    price: 220000,
+    image: "/t3.webp"
+  },
+  {
+    id: 20,
+    categoryId: "Teas",
+    name: "Sun-Infused Brew",
+    ingredients: ["Chamomile", "French Lavender", "Mango", "Yellow rose"],
+    price: 220000,
+    image: "/t4.webp"
+  },
+  {
+    id: 21,
+    categoryId: "Teas",
+    name: "Tea and Cinnamon",
+    ingredients: [],
+    price: 180000,
+    image: "/t5.webp"
+  },
+  {
+    id: 22,
+    categoryId: "Teas",
+    name: "Blue Butterfly Infused",
+    ingredients: ["French lavender", "butterfly pea", "lemongrass", "blueberry"],
+    price: 180000,
+    image: "/t6.webp"
   },
 
-  // Teas & Herbal
-  { 
-    id: "t1", 
-    name: "Matcha Latte", 
-    price: 5.2, 
-    ingredients: ["Ceremonial Japanese matcha", "Steamed almond milk", "Touch of honey"], 
-    image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=500&auto=format&fit=crop&q=60", 
-    categoryId: "Teas" 
-  },
-  { 
-    id: "t2", 
-    name: "Earl Grey Supreme", 
-    price: 3.8, 
-    ingredients: ["Black tea infused with natural bergamot oil", "Served with lemon slice"], 
-    image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500&auto=format&fit=crop&q=60", 
-    categoryId: "Teas" 
-  },
-
-  // Cakes & Pastries
-  { 
-    id: "p1", 
-    name: "Chocolate Fudge Cake", 
-    price: 6.0, 
-    ingredients: ["Rich Belgian chocolate layers", "Moist sponge", "Warm chocolate ganache"], 
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop&q=60", 
-    categoryId: "Cakes" 
-  },
-  { 
-    id: "p2", 
-    name: "Butter Croissant", 
-    price: 3.5, 
-    ingredients: ["Flaky, multi-layered French pastry", "Pure butter", "Served warm"], 
-    image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&auto=format&fit=crop&q=60", 
-    categoryId: "Cakes" 
-  }
 ];
