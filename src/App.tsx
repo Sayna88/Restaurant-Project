@@ -9,30 +9,32 @@ import Article from "./components/pages/article/Article";
 import MenuSelection from "./components/pages/menuSelection/MenuSelection";
 import RestaurantMenu from "./components/pages/restaurantMenu/RestaurantMenu";
 import CafeMenu from "./components/pages/cafeMenu/CafeMenu";
+import { CartProvider } from "./components/context/CartContext"; 
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
+    <CartProvider>
+      <div>
+        <BrowserRouter>
 
-        <Navbar />
+          <Navbar />
 
-        <Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/order" element={<Order />} />
+            <Route path="/article/:id" element={<Article />} />
+            <Route path="/menu-selection" element={<MenuSelection />} />
+            <Route path="/order/restaurant" element={<RestaurantMenu />} />
+            <Route path="/order/cafe" element={<CafeMenu />} />
+          </Routes>
 
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/order" element={<Order />} />
-          <Route path="/article/:id" element={<Article />} />
-          <Route path="/menu-selection" element={<MenuSelection />} />
-          <Route path="/order/restaurant" element={<RestaurantMenu />} />
-          <Route path="/order/cafe" element={<CafeMenu />} />
-
-        </Routes>
-
-        <Footer />
-        <ScrollToTop />
-      </BrowserRouter>
-    </div>
+          <Footer />
+          <ScrollToTop />
+          
+        </BrowserRouter>
+      </div>
+    </CartProvider>
   );
 }
 

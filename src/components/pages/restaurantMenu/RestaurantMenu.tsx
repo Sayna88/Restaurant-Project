@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { restaurantMenu } from "../../data/RestaurantData";
+import { useCart } from "../../context/CartContext";
 
 const PastaIcon = () => (
   <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-md">
@@ -127,6 +128,7 @@ const DrinksIcon = () => (
 
 const RestaurantMenu = () => {
   const location = useLocation();
+  const { addToCart } = useCart();
   const [activeCategory, setActiveCategory] = useState<string>(""); 
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -241,7 +243,9 @@ const RestaurantMenu = () => {
                         </p>
                       </div>
                       <div className="mt-4 flex justify-end">
-                         <button className="text-yellow-500 hover:text-white font-medium flex items-center gap-2 transition-colors cursor-pointer">+ Add to Order</button>
+                         <button onClick={() => addToCart({ id: String(item.id), name: item.name, price: item.price, image: item.image })} className="text-yellow-500 hover:text-white font-medium flex items-center gap-2 transition-colors cursor-pointer hover:scale-105 active:scale-95 duration-200">
+                           + Add to Order
+                         </button>
                       </div>
                     </div>
                   </div>
