@@ -1,73 +1,39 @@
-# React + TypeScript + Vite
+# 🍽️ Restaurant & Café Menu App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and interactive digital menu application built with React and TypeScript. This project features a beautifully designed UI for browsing both restaurant meals and café treats, complete with smooth scrolling navigation and a functional shopping cart system.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Interactive Digital Menu:** Premium UI for browsing different food and beverage categories.
+- **Smooth Scrolling Navigation:** A sticky, horizontal scrollable category navbar that smoothly glides to the selected section.
+- **State Management:** Integrated Shopping Cart using React Context API to handle "Add to Order" functionality.
+- **Fully Responsive:** Optimized for all devices (Mobile, Tablet, Desktop) using Tailwind CSS.
+- **Custom Assets:** Utilizes custom SVG icons and dynamic hover effects for a modern user experience.
+- **Dynamic Routing:** Built with React Router for seamless transitions between different sections (e.g., Restaurant vs. Café).
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** React.js
+- **Language:** TypeScript (`.tsx`)
+- **Styling:** Tailwind CSS
+- **Routing:** React Router DOM (`react-router-dom`)
+- **State Management:** React Context API
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Here is a brief overview of the core project structure:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```text
+src/
+├── components/
+│   └── pages/
+│       ├── restaurantMenu/
+│       │   └── RestaurantMenu.tsx
+│       └── cafeMenu/
+│           └── CafeMenu.tsx
+├── context/
+│   └── CartContext.tsx         # Global state for shopping cart
+├── data/
+│   ├── RestaurantData.ts       # Mock data for restaurant items
+│   └── CafeData.ts             # Mock data for cafe items
+└── App.tsx                     # Main application entry and routing

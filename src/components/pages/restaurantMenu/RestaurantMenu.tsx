@@ -129,7 +129,7 @@ const DrinksIcon = () => (
 const RestaurantMenu = () => {
   const location = useLocation();
   const { addToCart } = useCart();
-  const [activeCategory, setActiveCategory] = useState<string>(""); 
+  const [activeCategory, setActiveCategory] = useState(""); 
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -186,8 +186,8 @@ const RestaurantMenu = () => {
         <p className="text-gray-400 text-lg">Premium Handcrafted Dishes</p>
       </div>
 
-      <div className={`sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-gray-800 py-6 shadow-lg overflow-x-auto no-scrollbar transition-transform duration-500 ease-in-out ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
-        <div className="flex justify-start md:justify-center gap-4 px-6 min-w-max mx-auto">
+      <div className={`sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-gray-800 py-6 shadow-lg overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] transition-transform duration-500 ease-in-out ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className="flex flex-nowrap justify-start lg:justify-center gap-4 px-6 min-w-max mx-auto">
           {categories.map((cat) => (
             <button key={cat.id} onClick={() => scrollToCategory(cat.id)} className="flex flex-col items-center group w-28 md:w-32 flex-shrink-0 cursor-pointer relative">
               <div className={`w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center p-3 transition-all duration-300 group-hover:-translate-y-2 group-hover:bg-white group-hover:border-4 group-hover:border-yellow-500 group-hover:shadow-[0_0_20px_rgba(234,179,8,0.5)]
@@ -242,6 +242,7 @@ const RestaurantMenu = () => {
                           {item.ingredients.join(', ')}
                         </p>
                       </div>
+                      
                       <div className="mt-4 flex justify-end">
                          <button onClick={() => addToCart({ id: String(item.id), name: item.name, price: item.price, image: item.image })} className="text-yellow-500 hover:text-white font-medium flex items-center gap-2 transition-colors cursor-pointer hover:scale-105 active:scale-95 duration-200">
                            + Add to Order

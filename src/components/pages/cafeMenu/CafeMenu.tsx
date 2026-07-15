@@ -6,7 +6,7 @@ import { useCart } from "../../context/CartContext";
 const CafeMenu = () => {
   const location = useLocation();
   const { addToCart } = useCart();
-  const [activeCategory, setActiveCategory] = useState<string>(""); 
+  const [activeCategory, setActiveCategory] = useState(""); 
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const categories = [
@@ -60,10 +60,10 @@ const CafeMenu = () => {
         <p className="text-gray-400 text-lg">Premium Handcrafted Treats & Brews</p>
       </div>
 
-      <div className={`sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-gray-900 py-6 shadow-xl overflow-x-auto no-scrollbar transition-transform duration-500 ease-in-out ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
-        <div className="flex justify-start lg:justify-center gap-4 px-6 min-w-max mx-auto">
+      <div className={`sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-gray-900 py-6 shadow-xl overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] transition-transform duration-500 ease-in-out ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className="flex flex-nowrap justify-start lg:justify-center gap-4 px-6 min-w-max mx-auto">
           {categories.map((cat) => (
-            <button key={cat.id} onClick={() => scrollToCategory(cat.id)} className={`flex flex-col items-center justify-between p-2 bg-white w-24 h-28 md:w-28 md:h-32 rounded-xl border transition-all duration-300 shadow-md cursor-pointer group ${activeCategory === cat.id ? 'ring-4 ring-amber-500 scale-105 shadow-[0_0_20px_rgba(245,158,11,0.4)]' : 'border-gray-200 hover:scale-105'}`}>
+            <button key={cat.id} onClick={() => scrollToCategory(cat.id)} className={`flex flex-col items-center justify-between p-2 bg-white w-24 h-28 md:w-28 md:h-32 rounded-xl border transition-all duration-300 shadow-md cursor-pointer group flex-shrink-0 ${activeCategory === cat.id ? 'ring-4 ring-amber-500 scale-105 shadow-[0_0_20px_rgba(245,158,11,0.4)]' : 'border-gray-200 hover:scale-105'}`}>
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-amber-900/80 shadow-inner">
                 <img src={cat.img} alt={cat.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"/>
               </div>
@@ -112,6 +112,7 @@ const CafeMenu = () => {
                           {item.ingredients.join(', ')}
                         </p>
                       </div>
+                      
                       <div className="mt-4 flex justify-end">
                          <button onClick={() => addToCart({ id: String(item.id), name: item.name, price: item.price, image: item.image })} className="text-amber-500 hover:text-white font-medium flex items-center gap-2 transition-colors cursor-pointer hover:scale-105 active:scale-95 duration-200">
                           + Add to Order
